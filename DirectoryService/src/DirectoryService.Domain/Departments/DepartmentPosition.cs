@@ -1,9 +1,5 @@
-﻿namespace DirectoryService.Domain.Departments;
+﻿using DirectoryService.Domain.Positions;
 
-public record class DepartmentPosition
-{
-    public required Guid DepartmentId { get; init; }
+namespace DirectoryService.Domain.Departments;
 
-    public required Guid PositionId { get; init; }
-
-}
+public record class DepartmentPosition(DepartmentId DepartmentId,  PositionId PositionId);
