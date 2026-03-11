@@ -8,6 +8,10 @@ public class Department
 {
     private readonly List<Department> _childDepartments = [];
 
+    private readonly List<DepartmentPosition> _positions = [];
+
+    private readonly List<DepartmentLocation> _locations = [];
+
     public required DepartmentId Id { get; init; }
 
     public required DepartmentName Name { get; init; }
@@ -20,6 +24,10 @@ public class Department
 
     public IReadOnlyList<Department> ChildDeparments => _childDepartments;
 
+    public IReadOnlyList<DepartmentPosition> Positions => _positions;
+
+    public IReadOnlyList<DepartmentLocation> Locations => _locations;
+
     public string Path { get; private set; }
 
     public short Depth { get; private set; }
@@ -31,7 +39,7 @@ public class Department
     public DateTime UpdatedAt { get; private set; }
 
     [SetsRequiredMembers]
-    public Department(
+    private Department(
         DepartmentName name,
         string identifier,
         Department? parent = default)
