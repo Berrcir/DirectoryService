@@ -1,0 +1,14 @@
+services:
+  postgres:
+    container_name: DS_postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: Admin
+      POSTGRES_USER: Admin # Optional: default is postgres
+      POSTGRES_DB: directory_service_db # Optional: default is postgres
+      PGDATA: /var/lib/postgresql/data/pgdata 
+    ports:
+      - "5435:5432"
+    volumes:
+      - D:/ACP.Net/DockerPostgresVolumes/DirectoryService:/var/lib/postgresql/data
