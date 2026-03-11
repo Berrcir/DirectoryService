@@ -22,7 +22,7 @@ public class Location
     public DateTime UpdatedAt { get; private set; }
 
     [SetsRequiredMembers]
-    public Location(
+    private Location(
         string name,
         Address address,
         IanaCode timeZone)
