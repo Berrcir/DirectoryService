@@ -38,6 +38,11 @@ public class Department
 
     public DateTime UpdatedAt { get; private set; }
 
+    // EF Core
+    private Department()
+    {
+    }
+
     [SetsRequiredMembers]
     private Department(
         DepartmentName name,

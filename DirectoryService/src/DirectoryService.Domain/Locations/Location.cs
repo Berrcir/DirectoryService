@@ -1,5 +1,6 @@
 ﻿using CSharpFunctionalExtensions;
 using DirectoryService.Domain.Departments;
+using SeatsReservationService.Domain.Constants;
 using Shared;
 using System.Diagnostics.CodeAnalysis;
 
@@ -20,6 +21,11 @@ public class Location
     public required DateTime CreatedAt { get; init; }
 
     public DateTime UpdatedAt { get; private set; }
+
+    // EF Core
+    private Location()
+    {
+    }
 
     [SetsRequiredMembers]
     private Location(
@@ -46,8 +52,8 @@ public class Location
     {
         #region NAME_VALIDATION
 
-        const int MIN_NAME_LENGTH = 3;
-        const int MAX_NAME_LENGTH = 120;
+        const int MIN_NAME_LENGTH = LengthConstants.LENGTH_3;
+        const int MAX_NAME_LENGTH = LengthConstants.LENGTH_120;
 
         if (name is null)
         {
