@@ -2,7 +2,7 @@
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddProgramDependencies(builder);
+builder.Services.AddWebDependencies(builder);
 
 var app = builder.Build();
 

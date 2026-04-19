@@ -50,8 +50,6 @@ public class Location
         Address address,
         IanaCode timeZone)
     {
-        #region NAME_VALIDATION
-
         const int MIN_NAME_LENGTH = LengthConstants.LENGTH_3;
         const int MAX_NAME_LENGTH = LengthConstants.LENGTH_120;
 
@@ -64,8 +62,6 @@ public class Location
         {
             return Error.Validation("department.name", $"Department name must be {MIN_NAME_LENGTH}-{MAX_NAME_LENGTH} symbols", nameof(DepartmentName));
         }
-
-        #endregion
 
         return new Location(name, address, timeZone);
     }

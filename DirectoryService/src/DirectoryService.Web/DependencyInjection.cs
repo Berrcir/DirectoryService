@@ -4,9 +4,6 @@ namespace DirectoryService.Web
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddProgramDependencies(this IServiceCollection services, WebApplicationBuilder builder) =>
-            services.AddWebDependencies(builder);
-
         public static IServiceCollection AddWebDependencies(this IServiceCollection services, WebApplicationBuilder builder)
         {
             services.AddControllers();
