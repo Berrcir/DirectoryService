@@ -18,8 +18,13 @@ public class Position
 
     public DateTime UpdatedAt { get; private set; }
 
+    // EF Core
+    private Position()
+    {
+    }
+
     [SetsRequiredMembers]
-    public Position(
+    private Position(
         PositionName name,
         string? description = default)
     {

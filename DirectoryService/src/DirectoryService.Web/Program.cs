@@ -2,11 +2,11 @@
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddProgramDependencies();
+builder.Services.AddWebDependencies(builder);
 
 var app = builder.Build();
 
-if (builder.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(options =>

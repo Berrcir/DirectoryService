@@ -1,4 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
+using SeatsReservationService.Domain.Constants;
 using Shared;
 using System.Diagnostics.CodeAnalysis;
 
@@ -21,8 +22,8 @@ public record class PositionName
         string speciality,
         string direction)
     {
-        const int MIN_NAME_LENGTH = 3;
-        const int MAX_NAME_LENGTH = 120;
+        const int MIN_NAME_LENGTH = LengthConstants.LENGTH_3;
+        const int MAX_NAME_LENGTH = LengthConstants.LENGTH_120;
 
         if (speciality is null)
         {
