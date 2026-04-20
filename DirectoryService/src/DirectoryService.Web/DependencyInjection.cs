@@ -8,15 +8,7 @@ namespace DirectoryService.Web
         {
             services.AddControllers();
             services.AddSwaggerGen();
-
-            if (builder.Environment.IsDevelopment())
-            {
-                services.AddPostgreSqlDevInfrastructure(builder.Configuration);
-            }
-            else
-            {
-                services.AddPostgreSqlProdInfrastructure(builder.Configuration);
-            }
+            services.AddPostgreSqlInfrastructure(builder.Configuration, builder.Environment);
 
             return services;
         }
